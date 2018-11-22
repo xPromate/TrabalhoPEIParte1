@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns="http://BikeOnTrack.com/CommonTypes"
+           targetNamespace="http://BikeOnTrack.com/CommonTypes"
+           elementFormDefault="unqualified">
+    
+    <xs:simpleType name="moedaEmpresaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="USD"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="nameType">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="40"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="moedaType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ARS"/>
+            <xs:enumeration value="AUD"/>
+            <xs:enumeration value="BRL"/>
+            <xs:enumeration value="CAD"/>
+            <xs:enumeration value="CNY"/>
+            <xs:enumeration value="DEM"/>
+            <xs:enumeration value="EUR"/>
+            <xs:enumeration value="FRF"/>
+            <xs:enumeration value="GBP"/>
+            <xs:enumeration value="JPY"/>
+            <xs:enumeration value="MXN"/>
+            <xs:enumeration value="SAR"/>
+            <xs:enumeration value="VEB"/>
+            <xs:enumeration value="USD"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="nullType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="NULL"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="inteiroPositivoNullType">
+        <xs:choice>
+            <xs:element name="Int" type="xs:positiveInteger"/>
+            <xs:element name="Null" type="nullType"/>  
+        </xs:choice>
+    </xs:complexType>
+    
+    <xs:complexType name="dataHoraNullType">
+        <xs:choice>
+            <xs:element name="Data" type="xs:dateTime"/>
+            <xs:element name="Null" type="nullType"/>
+        </xs:choice>
+    </xs:complexType>
+    
+</xs:schema>

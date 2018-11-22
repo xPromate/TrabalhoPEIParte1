@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ct="http://BikeOnTrack.com/CommonTypes"
+           xmlns="http://BikeOnTrack.com/ProductDetails"
+           targetNamespace="http://BikeOnTrack.com/ProductDetails"
+           elementFormDefault="unqualified">
+    
+    <xs:import schemaLocation="CommonTypes.xsd" namespace="http://BikeOnTrack.com/CommonTypes"/>
+
+    <xs:simpleType name="colorType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="Black"/>
+            <xs:enumeration value="Silver"/>
+            <xs:enumeration value="Red"/>
+            <xs:enumeration value="White"/>
+            <xs:enumeration value="Multi"/>
+            <xs:enumeration value="Blue"/>
+            <xs:enumeration value="Yellow"/>
+            <xs:enumeration value="Green"/>
+            <xs:enumeration value="Silver/Black"/>
+            <xs:enumeration value="Grey"/>
+            <xs:enumeration value="NULL"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="listPriceType">
+        <xs:restriction base="xs:decimal">
+            <xs:totalDigits value="4"/>
+            <xs:fractionDigits value="2"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:simpleType name="productNumberType">
+        <xs:restriction base="xs:string">
+            <xs:minLength value="7"/>
+            <xs:maxLength value="10"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:complexType name="productDetailsType">
+        <xs:sequence>
+            <xs:element name="ProductID" type="xs:positiveInteger"/>
+            <xs:element name="Name" type="ct:nameType"/>
+            <xs:element name="ProductNumber" type="productNumberType"/>
+            <xs:element name="Color" type="colorType"/>
+            <xs:element name="ListPrice" type="listPriceType"/>
+            <xs:element name="SellStartDate" type="xs:dateTime"/>
+            <xs:element name="SellEndDate" type="ct:dataHoraNullType"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="productsDetailsType">
+        <xs:sequence>
+            <xs:element name="ProductDetail" type="productDetailsType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

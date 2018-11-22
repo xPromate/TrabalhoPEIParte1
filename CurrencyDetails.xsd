@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ct="http://BikeOnTrack.com/CommonTypes"
+           xmlns="http://BikeOnTrack.com/CurrencyDetails"
+           targetNamespace="http://BikeOnTrack.com/CurrencyDetails"
+           elementFormDefault="unqualified">
+    
+    <xs:import schemaLocation="CommonTypes.xsd" namespace="http://BikeOnTrack.com/CommonTypes"/>
+    
+    <xs:complexType name="currencyDetailsType">
+        <xs:sequence>
+            <xs:element name="CurrencyRateID" type="xs:positiveInteger"/>
+            <xs:element name="CurrencyRateDate" type="xs:dateTime"/>
+            <xs:element name="FromCurrencyCode" type="ct:moedaEmpresaType"/>
+            <xs:element name="ToCurrencyCode" type="ct:moedaType"/>
+            <xs:element name="RateVal" type="xs:decimal"/>    
+        </xs:sequence>
+    </xs:complexType> 
+    
+     <xs:complexType name="currencysDetailsType">
+        <xs:sequence>
+            <xs:element name="CurrencyDetail" type="currencyDetailsType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+        
+</xs:schema>

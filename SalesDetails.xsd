@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:ct="http://BikeOnTrack.com/CommonTypes"
+           xmlns="http://BikeOnTrack.com/SalesDetails"
+           targetNamespace="http://BikeOnTrack.com/SalesDetails"
+           elementFormDefault="unqualified">
+    
+    <xs:import schemaLocation="CommonTypes.xsd" namespace="http://BikeOnTrack.com/CommonTypes"/>
+
+    <xs:simpleType name="receiptIDType">
+        <xs:restriction base="xs:positiveInteger">
+            <xs:totalDigits value="5" />
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:complexType name="saleDetailsType">
+        <xs:sequence>
+            <xs:element name="ReceiptID" type="receiptIDType"/>
+            <xs:element name="OrderDate" type="xs:dateTime"/>
+            <xs:element name="Customer" type="xs:positiveInteger"/>
+            <xs:element name="CurrencyRateID" type="ct:inteiroPositivoNullType"/>
+            <xs:element name="SubTotal" type="xs:decimal"/>
+            <xs:element name="TaxAmt" type="xs:decimal"/>
+            <xs:element name="Store" type="xs:positiveInteger"/>
+            <xs:element name="StoreName" type="ct:nameType"/>
+            <xs:element name="ReceiptLineID" type="xs:positiveInteger"/>
+            <xs:element name="Order" type="xs:positiveInteger"/>
+            <xs:element name="ProductID" type="xs:positiveInteger"/>
+            <xs:element name="UnitPrice" type="xs:decimal"/>
+            <xs:element name="LineTotal" type="xs:decimal"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+    <xs:complexType name="salesDetailsType">
+        <xs:sequence>
+            <xs:element name="SaleDetail" type="saleDetailsType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+    
+</xs:schema>

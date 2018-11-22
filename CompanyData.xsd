@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:c="http://BikeOnTrack.com/CurrencyDetails"
+           xmlns:p="http://BikeOnTrack.com/ProductDetails"
+           xmlns:s="http://BikeOnTrack.com/SalesDetails"
+           xmlns:="http://BikeOnTrack.com/CompanyData"
+           targetNamespace="http://BikeOnTrack.com/CompanyData"
+           elementFormDefault="unqualified">
+    
+    <xs:import schemaLocation="CurrencyDetails.xsd" namespace="http://BikeOnTrack.com/CurrencyDetails"/>
+    <xs:import schemaLocation="ProductDetails.xsd" namespace="http://BikeOnTrack.com/ProductDetails"/>
+    <xs:import schemaLocation="SalesDetails.xsd" namespace="http://BikeOnTrack.com/SalesDetails"/>
+    
+    
+    <xs:simpleType name="nameCompanyType">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="BikeOnTrack"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:element name="CompanyData">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="CurrencysDetails" type="c:currencysDetailsType"/>
+                <xs:element name="ProductsDetails" type="p:productsDetailsType"/>
+                <xs:element name="SalesDetails" type="s:salesDetailsType"/>
+            </xs:sequence>
+            <xs:attribute name="Company" type="xs:string" use="required" fixed="BikeOnTrack"/>
+        </xs:complexType>
+    </xs:element>
+        
+</xs:schema>

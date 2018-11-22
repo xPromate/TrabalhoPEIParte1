@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<c:CompanyData Company="BikeOnTrack"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:c="http://BikeOnTrack.com/CompanyData"
+               xsi:schemaLocation="http://BikeOnTrack.com/CompanyData CompanyData.xsd">
+  
+   <CurrencysDetails>
+    <CurrencyDetail>
+        <CurrencyRateID>1</CurrencyRateID>
+        <CurrencyRateDate>2011-05-31T00:00:00</CurrencyRateDate>
+        <FromCurrencyCode>USD</FromCurrencyCode>
+        <ToCurrencyCode>ARS</ToCurrencyCode>
+        <RateVal>1.00002</RateVal>
+    </CurrencyDetail>
+  </CurrencysDetails>                 
+  
+  <ProductsDetails>
+    <ProductDetail>
+        <ProductID>1</ProductID>
+        <Name>Adjustable Race</Name>
+        <ProductNumber>AR-5381</ProductNumber>
+        <Color>NULL</Color>
+        <ListPrice>0</ListPrice>
+        <SellStartDate>2008-04-30T00:00:00</SellStartDate>
+        <SellEndDate>
+            <Null>NULL</Null>
+        </SellEndDate>
+    </ProductDetail>      
+  </ProductsDetails>
+  
+  <SalesDetails>                        
+    <SaleDetail>
+        <ReceiptID>43659</ReceiptID>
+        <OrderDate>2011-05-31T00:00:00</OrderDate>
+        <Customer>29825</Customer>
+        <CurrencyRateID>
+            <Null>NULL</Null>
+        </CurrencyRateID>
+        <SubTotal>20565.62</SubTotal>
+        <TaxAmt>1971.515</TaxAmt>
+        <Store>1046</Store>
+        <StoreName>Better Bike Shop</StoreName>
+        <ReceiptLineID>1</ReceiptLineID>
+        <Order>1</Order>
+        <ProductID>776</ProductID>
+        <UnitPrice>2024.994</UnitPrice>
+        <LineTotal>2024.994000</LineTotal>   
+    </SaleDetail>
+  </SalesDetails>     
+            
+</c:CompanyData>
