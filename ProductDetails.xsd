@@ -33,8 +33,7 @@
 
     <xs:simpleType name="productNumberType">
         <xs:restriction base="xs:string">
-            <xs:minLength value="7"/>
-            <xs:maxLength value="10"/>
+            <xs:pattern value ="[A-Z]{2}-[A-Z0-9]{4}(-)?([A-Z0-9])*"/>
         </xs:restriction>
     </xs:simpleType>
 
