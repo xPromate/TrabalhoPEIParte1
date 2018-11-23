@@ -7,23 +7,31 @@
            xmlns:="http://BikeOnTrack.com/CompanyData"
            targetNamespace="http://BikeOnTrack.com/CompanyData"
            elementFormDefault="unqualified">
-    
+           
+    <!-- Importar XSD's secundários -->
     <xs:import schemaLocation="CurrencyDetails.xsd" namespace="http://BikeOnTrack.com/CurrencyDetails"/>
     <xs:import schemaLocation="ProductDetails.xsd" namespace="http://BikeOnTrack.com/ProductDetails"/>
     <xs:import schemaLocation="SalesDetails.xsd" namespace="http://BikeOnTrack.com/SalesDetails"/>
     
-    
+    <!-- Definição do tipo nameCompanyType -->
     <xs:simpleType name="nameCompanyType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="BikeOnTrack"/>
         </xs:restriction>
     </xs:simpleType>
     
+    <!-- Estrutura básica do XML -->
     <xs:element name="CompanyData">
         <xs:complexType>
             <xs:sequence>
+
+                <!-- Estrutura do CurrencysDetails dentro de CurrencyDetails.xsd -->
                 <xs:element name="CurrencysDetails" type="c:currencysDetailsType"/>
+
+                <!-- Estrutura do ProductsDetails dentro de ProductDetails.xsd -->
                 <xs:element name="ProductsDetails" type="p:productsDetailsType"/>
+
+                <!-- Estrutura do SalesDetails dentro de SalesDetails.xsd -->
                 <xs:element name="SalesDetails" type="s:salesDetailsType"/>
             </xs:sequence>
             <xs:attribute name="Company" type="xs:string" use="required" fixed="BikeOnTrack"/>

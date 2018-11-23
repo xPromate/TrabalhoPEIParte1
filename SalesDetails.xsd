@@ -6,14 +6,17 @@
            targetNamespace="http://BikeOnTrack.com/SalesDetails"
            elementFormDefault="unqualified">
     
+    <!-- Importar XSD secundário -->
     <xs:import schemaLocation="CommonTypes.xsd" namespace="http://BikeOnTrack.com/CommonTypes"/>
 
+    <!-- Definição do tipo de receiptIDType  -->
     <xs:simpleType name="receiptIDType">
         <xs:restriction base="xs:positiveInteger">
             <xs:totalDigits value="5" />
         </xs:restriction>
     </xs:simpleType>
     
+    <!-- Definição de saleDetails -->
     <xs:complexType name="saleDetailsType">
         <xs:sequence>
             <xs:element name="ReceiptID" type="receiptIDType"/>
@@ -32,6 +35,7 @@
         </xs:sequence>
     </xs:complexType>
     
+    <!-- Unidades tem de ter, no mínimo, 1 elemento de saleDetailsType-->
     <xs:complexType name="salesDetailsType">
         <xs:sequence>
             <xs:element name="SaleDetail" type="saleDetailsType" minOccurs="1" maxOccurs="unbounded"/>

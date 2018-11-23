@@ -4,19 +4,22 @@
            xmlns="http://BikeOnTrack.com/CommonTypes"
            targetNamespace="http://BikeOnTrack.com/CommonTypes"
            elementFormDefault="unqualified">
-    
+
+     <!-- Definição do tipo de moeda da empresa  -->
     <xs:simpleType name="moedaEmpresaType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="USD"/>
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Definição de um tipo string com no maximo  -->
     <xs:simpleType name="nameType">
         <xs:restriction base="xs:string">
             <xs:maxLength value="40"/>
         </xs:restriction>
     </xs:simpleType>
 
+    <!-- Definição do tipo de moeda da empresa  -->
     <xs:simpleType name="moedaType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="ARS"/>
@@ -35,20 +38,23 @@
             <xs:enumeration value="USD"/>
         </xs:restriction>
     </xs:simpleType>
-    
+
+    <!-- Definição do tipo NULL que e umua string  -->
     <xs:simpleType name="nullType">
         <xs:restriction base="xs:string">
             <xs:enumeration value="NULL"/>
         </xs:restriction>
     </xs:simpleType>
     
+    <!-- Definição do tipo inteiro positivo ou Null  -->
     <xs:complexType name="inteiroPositivoNullType">
         <xs:choice>
             <xs:element name="Int" type="xs:positiveInteger"/>
             <xs:element name="Null" type="nullType"/>  
         </xs:choice>
     </xs:complexType>
-    
+
+    <!-- Definição do tipo data ou Null  -->
     <xs:complexType name="dataHoraNullType">
         <xs:choice>
             <xs:element name="Data" type="xs:dateTime"/>

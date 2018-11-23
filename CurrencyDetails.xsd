@@ -5,9 +5,12 @@
            xmlns="http://BikeOnTrack.com/CurrencyDetails"
            targetNamespace="http://BikeOnTrack.com/CurrencyDetails"
            elementFormDefault="unqualified">
-    
+
+
+    <!-- Importar XSD secundário -->
     <xs:import schemaLocation="CommonTypes.xsd" namespace="http://BikeOnTrack.com/CommonTypes"/>
     
+    <!-- Definição de currencyDetailsType -->
     <xs:complexType name="currencyDetailsType">
         <xs:sequence>
             <xs:element name="CurrencyRateID" type="xs:positiveInteger"/>
@@ -18,6 +21,7 @@
         </xs:sequence>
     </xs:complexType> 
     
+    <!-- Unidade tem de ter no mínimo um caso de currencyDetails -->
      <xs:complexType name="currencysDetailsType">
         <xs:sequence>
             <xs:element name="CurrencyDetail" type="currencyDetailsType" minOccurs="1" maxOccurs="unbounded"/>

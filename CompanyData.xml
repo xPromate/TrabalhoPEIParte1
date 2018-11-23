@@ -3,19 +3,41 @@
 <c:CompanyData Company="BikeOnTrack"
                xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
                xmlns:c="http://BikeOnTrack.com/CompanyData"
-               xsi:schemaLocation="http://BikeOnTrack.com/CompanyData CompanyData.xsd">
+               xsi:schemaLocation="http://BikeOnTrack.com/CompanyData CompanyData.xsd"> <!-- Importação do Schema XSD -->
   
+   <!-- CurrencysDetails -->
    <CurrencysDetails>
+    <!-- Primeiro exemplo de currencyDetail -->
     <CurrencyDetail>
         <CurrencyRateID>1</CurrencyRateID>
         <CurrencyRateDate>2011-05-31T00:00:00</CurrencyRateDate>
         <FromCurrencyCode>USD</FromCurrencyCode>
         <ToCurrencyCode>ARS</ToCurrencyCode>
-        <RateVal>1.00002</RateVal>
+        <RateVal>1.0002</RateVal>
+    </CurrencyDetail>
+
+    <!-- Segundo exemplo de currencyDetail -->
+    <CurrencyDetail>
+        <CurrencyRateID>2</CurrencyRateID>
+        <CurrencyRateDate>2011-05-31T00:00:00</CurrencyRateDate>
+        <FromCurrencyCode>USD</FromCurrencyCode>
+        <ToCurrencyCode>AUD</ToCurrencyCode>
+        <RateVal>1.55</RateVal>
+    </CurrencyDetail>
+
+    <!-- Terceiro exemplo de currencyDetail -->
+    <CurrencyDetail>
+        <CurrencyRateID>3</CurrencyRateID>
+        <CurrencyRateDate>2011-05-31T00:00:00</CurrencyRateDate>
+        <FromCurrencyCode>USD</FromCurrencyCode>
+        <ToCurrencyCode>BRL</ToCurrencyCode>
+        <RateVal>1.9419</RateVal>
     </CurrencyDetail>
   </CurrencysDetails>                 
   
+  <!-- ProductsDetails -->
   <ProductsDetails>
+    <!-- Primeiro exemplo de ProductDetail -->
     <ProductDetail>
         <ProductID>1</ProductID>
         <Name>Adjustable Race</Name>
@@ -26,10 +48,40 @@
         <SellEndDate>
             <Null>NULL</Null>
         </SellEndDate>
-    </ProductDetail>      
+    </ProductDetail>    
+
+    <!-- Segundo exemplo de ProductDetail -->
+    <ProductDetail>
+        <ProductID>713</ProductID>
+        <Name>Long-Sleeve Logo Jersey, S</Name>
+        <ProductNumber>LJ-0192-S</ProductNumber>
+        <Color>Multi</Color>
+        <ListPrice>49.99</ListPrice>
+        <SellStartDate>2011-05-31T00:00:00</SellStartDate>
+        <SellEndDate>
+            <Null>NULL</Null>
+        </SellEndDate>
+    </ProductDetail>
+
+    <!-- Terceiro exemplo de ProductDetail -->
+    <ProductDetail>
+        <ProductID>717</ProductID>
+        <Name>HL Road Frame - Red, 62</Name>
+        <ProductNumber>FR-R92R-62</ProductNumber>
+        <Color>Red</Color>
+        <ListPrice>1431.50</ListPrice>
+        <SellStartDate>2011-05-31T00:00:00</SellStartDate>
+        <SellEndDate>
+            <Null>NULL</Null>
+        </SellEndDate>
+    </ProductDetail> 
   </ProductsDetails>
-  
-  <SalesDetails>                        
+
+   
+  <!-- SalesDetails -->
+  <SalesDetails>
+
+    <!-- Primeiro exemplo de SaleDetail -->                        
     <SaleDetail>
         <ReceiptID>43659</ReceiptID>
         <OrderDate>2011-05-31T00:00:00</OrderDate>
@@ -37,8 +89,8 @@
         <CurrencyRateID>
             <Null>NULL</Null>
         </CurrencyRateID>
-        <SubTotal>20565.62</SubTotal>
-        <TaxAmt>1971.515</TaxAmt>
+        <SubTotal>20565.6206</SubTotal>
+        <TaxAmt>1971.5149</TaxAmt>
         <Store>1046</Store>
         <StoreName>Better Bike Shop</StoreName>
         <ReceiptLineID>1</ReceiptLineID>
@@ -46,6 +98,44 @@
         <ProductID>776</ProductID>
         <UnitPrice>2024.994</UnitPrice>
         <LineTotal>2024.994000</LineTotal>   
+    </SaleDetail>
+
+    <!-- Segundo exemplo de SaleDetail -->                        
+    <SaleDetail>
+        <ReceiptID>44100</ReceiptID>
+        <OrderDate>2011-08-01T00:00:00</OrderDate>
+        <Customer>29690</Customer>
+        <CurrencyRateID>
+            <Null>NULL</Null>
+        </CurrencyRateID>
+        <SubTotal>81164.2329</SubTotal>
+        <TaxAmt>7884.6612</TaxAmt>
+        <Store>764</Store>
+        <StoreName>Fashionable Bikes and Accessories</StoreName>
+        <ReceiptLineID>1652</ReceiptLineID>
+        <Order>6</Order>
+        <ProductID>709</ProductID>
+        <UnitPrice>5.7</UnitPrice>
+        <LineTotal>34.200000</LineTotal>   
+    </SaleDetail>
+
+    <!-- Terceiro exemplo de SaleDetail -->                        
+    <SaleDetail>
+        <ReceiptID>43668</ReceiptID>
+        <OrderDate>2011-05-31T00:00:00</OrderDate>
+        <Customer>29614</Customer>
+        <CurrencyRateID>
+            <Int>4</Int>
+        </CurrencyRateID>
+        <SubTotal>35944.1562</SubTotal>
+        <TaxAmt>3461.7654</TaxAmt>
+        <Store>592</Store>
+        <StoreName>Retail Mall</StoreName>
+        <ReceiptLineID>81</ReceiptLineID>
+        <Order>3</Order>
+        <ProductID>756</ProductID>
+        <UnitPrice>874.794</UnitPrice>
+        <LineTotal>2624.382000</LineTotal>   
     </SaleDetail>
   </SalesDetails>     
             
