@@ -26,10 +26,9 @@
         </xs:restriction>
     </xs:simpleType>
     
-    <!-- Definição de listPriceType como um número de 4 dígitos inteiros e 2 decimais -->
+    <!-- Definição de listPriceType com 2 casas decimais -->
     <xs:simpleType name="listPriceType">
         <xs:restriction base="xs:decimal">
-            <xs:totalDigits value="6"/>
             <xs:fractionDigits value="2"/>
         </xs:restriction>
     </xs:simpleType>
